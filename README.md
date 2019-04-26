@@ -2,6 +2,8 @@
 
 This single-page app was created as part of freecode camp's Responsive Web Design curriculum. The objective was to create a CodePen.io app that was functionally similar to [this](https://codepen.io/freeCodeCamp/full/NdrKKL).
 
+[Visit my CodePen to see the code live.](https://codepen.io/ginamc/pen/QPxOKr)
+
 ## TOC
 [Use](#use)
 [Resources](#resources)
