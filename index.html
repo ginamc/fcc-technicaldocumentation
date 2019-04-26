@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fcc technical documentation</title>
+  <!-- CHANGE STYLESHEET SPECS -->
+  <link rel="stylesheet" type="text/css" title="stylesheet" href="css/stylesheet.css">
+  <!-- add Google fontss -->
+  <link href="https://fonts.googleapis.com/css?family=Heebo:100|Open+Sans+Condensed:300" rel="stylesheet">
+  <!-- Freecode Camp project test script -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<body>
+  <!-- USE AT LEAST ONE MEDIA QUERY -->
+
+  <!-- NAV SECTION -->
+<nav id="navbar">
+   <ul class="navlist">
+    <li class="nav-item"><header class="navtitle">Learn PHP</header></li>
+    <li class="nav-item"><a class="nav-link" href="#welcome">Welcome</a></li>
+    <li class="nav-item"><a class="nav-link" href="#hello_world">Hello World!</a></li>
+    <li class="nav-item"><a class="nav-link" href="#variables_types">Variables and Types</a></li>
+    <li class="nav-item"><a class="nav-link" href="#simple_arrays">Simple Arrays</a></li>
+    <li class="nav-item"><a class="nav-link" href="#functions">Functions</a></li>
+    <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN CONTENT SECTION -->
+<main id="main-doc">
+
+<section class="main-section" id="welcome">
+  <header>
+    <h2>Welcome</h2>
+  </header>
+  <p>
+    This is the learn-php.org free interactive PHP tutorial. Whether you are an experienced programmer or not, this website is intended for everyone who wishes to learn the PHP programming language. There is no need to download anything - just click on the chapter you wish to begin from, and follow the instructions.
+  </p>
+</section>
+
+<section class="main-section" id="hello_world">
+  <header>
+    <h2>Hello World!</h2>
+  </header>
+  <p>PHP is the most commonly used programming language for the web today. PHP is very common because it has a relatively simple architecture compared to other MVC based web frameworks (Python, Ruby, node.js, etc).</p>
+  <p>Unlike the standard web frameworks, a PHP file is actually an "enhanced" HTML file, which is also capable of executing code inside a document. So for example, you may start with a simple HTML page which looks like this:</p>
+
+  <pre>
+    <!-- make background for code snippet dark gray -->
+    <code class="codeblock">
+      &lt;html&gt;
+      &lt;head&gt;&lt;/head&gt;
+      &lt;body&gt;
+      <span class="text-hello">Hello!</span><!-- change text color to red -->
+      <span>&lt;?php ?&gt;</span>
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </code>
+  </pre>
+
+  <p>Later on add a PHP section which executes PHP code, and writes the output as HTML. Notice that the PHP line disappeared when executing, since the PHP code is replaced by the output. Let's try adding the name of the user's name.</p>
+
+  <pre>
+    <code class="codeblock">
+      &lt;?php $user = <span class="string">"John"</span>; ?&gt;
+      &lt;html&gt;
+      &lt;head&gt;&lt;/head&gt;
+      &lt;body&gt;
+      Hello &lt;?php <span class="echo">echo</span> $user; ?&gt;!
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </code>
+  </pre>
+
+  <p>On this tutorial, we will focus on learning PHP as a programming language and not web development. Therefore, we will not use HTML at all, and focus on writing code as opposed to rendering web pages. </p>
+
+<p>In our tutorials, we will always open and close a PHP tag (starting with <code class="string">&lt;?php</code> and ending with <code class="string">?&gt;</code>) in the beginning and the end of our code. For testing our code, we are able to print messages to our console using the <code class="echo">echo</code> command.</p>
+</section>
+
+<section class="main-section" id="variables_types">
+  <header>
+    <h2>Variables and Types</h2>
+  </header>
+
+  <p>To define a variable, simply use the following syntax:</p>
+    <pre><code class="codeblock">
+      $x = 1;
+      $y = "foo";
+      $z = True;
+    </code></pre>
+
+  <p>We have just defined:</p>
+    <ul>
+      <li> a variable named <code class="string">x</code> with the number 1,</li>
+      <li> a variable named <code class="string">y</code> with the string "foo," and </li>
+      <li> a variable name <code class="string">z</code> with the boolean value True.</li>
+    </ul>
+  <p>Once they are defined, we can use them in the code.</p>
+
+  <p>PHP has many types of variables, but the most basic variable types are:</p>
+  <ul>
+    <li> integer (whole numbers),</li>
+    <li> float (real numbers),</li>
+    <li> strings, and</li>
+    <li> booleans.</li>
+  </ul>
+
+  <p>Variables can also be set to NULL, which means that the variables exist, but do not contain any value.</p>
+
+  <h3>Operators</h3>
+  <p>We can use simple arithmetic operators to add, subtract or concatenate between variables.</p>
+
+  <p>We can also print out PHP variables using the <code class="echo">echo</code> command. For example, let's sum up two numbers, put the result in a new variable, and print out the result.</p>
+
+  <pre><code class="codeblock">
+    $x = 1;
+    $y = 2;
+    $sum = $x + $y;
+    <span class="echo">echo</span> $sum;       <span class="code-comment">// prints out 3</span>
+  </code></pre>
+
+  <h3>String Formatting</h3>
+  <p>Like Perl, PHP double quoted strings can format strings using defined variables. For example:</p>
+
+  <pre><code class="codeblock">
+    $name = <span class="string">"Jake"</span>;
+    <span class="echo">echo</span> <span class="string">"Your name is $name"</span>;    <span class="code-comment">// prints out Your name is Jake</span>
+  </code></pre>
+</section>
+
+<section class="main-section" id="simple_arrays">
+  <header>
+    <h2>Simple Arrays</h2>
+  </header>
+
+  <p>Arrays are a special type of variable that can contain many variables, and hold them in a list.</p>
+
+  <p>For example, let's say we want to create a list of all the odd numbers between 1 and 10. Once we create the list, we can assign new variables that will refer to a variable in the array, using the index of the variable.</p>
+
+  <p>To use the first variable in the list (in this case the number 1), we will need to give the first index, which is 0, since PHP uses zero based indices, like almost all programming languages today.</p>
+
+  <pre><code class="codeblock">
+    $odd_numbers = [1,3,5,7,9];
+    $first_odd_number = $odd_numbers[0];
+    $second_odd_number = $odd_numbers[1];
+
+    <span class="echo">echo</span> <span class="string">"The first odd number is $first_odd_number\n"</span>;
+    <span class="echo">echo</span> <span class="string">"The second odd number is $second_odd_number\n"</span>;
+  </code></pre>
+
+  <p>We can now add new variables using an index. To add an item to the end of the list, we can assign the array with index 5 (the 6th variable):</p>
+
+  <pre><code class="codeblock">
+    $odd_numbers = [1,3,5,7,9];
+    $odd_numbers[5] = 11;
+    print_r($odd_numbers);
+  </code></pre>
+
+  <p>Arrays can contain different types of variables according to your needs, and can even contain other arrays or objects as members. To delete an item from an array, use the <code class="string">unset</code> function on the member itself. For example:</p>
+
+  <pre><code class="codeblock">
+    $odd_numbers = [1,3,5,7,9];
+    unset($odd_numbers[2]); <span class="code-comment">// will remove the 3rd item (5) from the list</span>
+    print_r($odd_numbers);
+  </code></pre>
+</section>
+
+<section class="main-section" id="functions">
+  <header>
+    <h2>Functions</h2>
+  </header>
+
+  <p>Functions are simple code blocks we can call from anywhere. For example, we can create a function that sums a list of numbers and returns the result. Let's call this function <code class="string">sum</code>.</p>
+
+  <p>There are two types of functions - library functions and user functions. Library functions, such as <code class="string">array_push</code> are part of the PHP library and can be used by anyone. However, you may write your own functions and use them across your code.</p>
+
+  <p>A function receives a list of arguments separated by commas. Every argument only exists in the context of the function, meaning that they become variables inside the function block, but are not defined outside of that function block.</p>
+
+  <pre><code class="codeblock">
+    <span class="code-comment">// define a function called `sum` that will</span>
+    <span class="code-comment">// receive a list of numbers as an argument.</span>
+    function sum($numbers) {
+        <span class="code-comment">// initialize the variable we will return</span>
+        $sum = 0;
+
+        <span class="code-comment">// sum up the numbers</span>
+        foreach ($numbers as $number) {
+            $sum += $number;
+        }
+
+        <span class="code-comment">// return the sum to the user</span>
+        return $sum;
+    }
+
+    <span class="code-comment">// Example usage of sum</span>
+    echo sum([1,2,3,4,5,6,7,8,9,10]);
+  </code></pre>
+
+  <p>After defining functions, you may load other PHP files into one another, so you may define all your functions in one file, and load them for another. Let's say that we have defined the <code class="string">sum</code> function inside a file called <code class="string">sum.php</code>. We can now create another file, say <code class="string">index.php</code> and use the <code class="string">sum</code> function by including <code class="string">sum.php</code> as follows:</p>
+
+  <pre><code class="codeblock">
+    include("sum.php");
+
+    <span class="code-comment">// Example usage of sum</span>
+    echo sum([1,2,3,4,5,6,7,8,9,10]);
+  </code></pre>
+  </section>
+
+  <section class="main-section" id="resources">
+    <header>
+      <h2>Resources</h2>
+    </header>
+  
+    <ul>
+      <li><a href="https://color.review/">Color References</a></li>
+      <li><a href="https://www.learn-php.org/">Content from learn-php.org</a></li>
+      <li><a href="https://www.w3schools.com/">w3schools</a></li>
+    </ul>   
+    </section>
+
+</main>
+
+</body>
+
+</html>

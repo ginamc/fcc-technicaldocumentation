@@ -1,0 +1,83 @@
+/* GENERAL STYLING */
+*,
+*:before,
+*:after {
+  font-family: monospace;
+}
+
+.navlist {
+  height: 100%; /* full height*/
+  width: 175px;
+  position: fixed; /*keeps the menu fixed*/
+  z-index: 1; /* keeps the menu on top */
+  top: 0; /*stay on top*/
+  left: 0; /* stay on left*/
+  background-color: black;
+  overflow-x: hidden; /*disable horizontal scroll*/
+  /* padding-top: 20px; */
+}
+
+.navtitle {
+  color: #2D99FF;
+  font-size: 2em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-link {
+  padding-top: 12px;
+  text-decoration: none;
+  font-size: 1em;
+  color: #68B5FC;
+  display: block;
+}
+
+/* color change when you hover over nav link */
+.nav-link:hover{
+  color: #EBFF53;
+}
+
+/* page content styling */
+#main-doc {
+  margin-left: 250px; /*same width as sidebar nav */
+  padding: 10px 10px;
+}
+
+/* styling for code snippets */
+.codeblock {
+  background-color: #FBFBFB;
+  display: block;
+  color: #4F4F4F;
+  padding: 20px;
+}
+
+.text-hello {
+  color: red;
+}
+
+.string {
+  color: blue;
+}
+
+.echo {
+  color: green;
+}
+
+.code-comment {
+  color: slategray;
+}
+
+/* MEDIA QUERIES */
+/* for screens smaller than 400px, change sidebar to less padding and smaller font */
+@media screen and (max-width: 400px) {
+  .navlist {
+    width: 95px;
+  }
+
+  .navtitle {
+    font-size: 1.5em;
+  }
+  #main-doc {
+    margin-left: 150px;
+  }
+}
